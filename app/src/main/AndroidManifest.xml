@@ -22,6 +22,8 @@
             android:label="@string/title_activity_first_recycler_view"
             android:theme="@style/AppTheme.NoActionBar" >
         </activity>
+        <activity android:name=".activity.SecondRecyclerViewActivity" >
+        </activity>
     </application>
 
 </manifest>

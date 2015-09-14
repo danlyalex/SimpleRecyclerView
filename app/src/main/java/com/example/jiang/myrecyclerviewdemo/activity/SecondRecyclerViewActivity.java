@@ -5,38 +5,32 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 
-import com.example.jiang.myrecyclerviewdemo.itemdirect.ItemDirection;
 import com.example.jiang.myrecyclerviewdemo.R;
+import com.example.jiang.myrecyclerviewdemo.adapter.SecondRecyclerAdapter;
 import com.example.jiang.myrecyclerviewdemo.utils.SnackBarUtils;
-import com.example.jiang.myrecyclerviewdemo.adapter.FirstRecAdapter;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.Bind;
 
-public class FirstRecyclerViewActivity extends BaseActivity {
+public class SecondRecyclerViewActivity extends BaseActivity {
 
 
-    @Bind(R.id.first_recycle)
+    @Bind(R.id.second_recycle)
     RecyclerView mRecycleView;
 
     @Override
     protected void initViewWithEvents() {
-        initRecyclerView();
-    }
-
-    private void initRecyclerView() {
-        RecyclerView.LayoutManager mManager = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
+        RecyclerView.LayoutManager mManager = new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false);
         mRecycleView.setLayoutManager(mManager);
-        mRecycleView.addItemDecoration(new ItemDirection());
         mRecycleView.setItemAnimator(new DefaultItemAnimator());
         List<String> mValues = new ArrayList<>();
         for (int i = 0; i < 40; i++) {
-            mValues.add("第" + i + "条数据");
+            mValues.add(i+"");
         }
-        FirstRecAdapter mAdapter = new FirstRecAdapter(this, mValues);
-        mAdapter.setmOnItemClickListener(new FirstRecAdapter.OnItemClickListener() {
+        SecondRecyclerAdapter mAdapter = new SecondRecyclerAdapter(this, mValues);
+        mAdapter.setmOnItemClickListener(new SecondRecyclerAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(View v, int position) {
                 SnackBarUtils.showShortSnackBar(v, "你点击了" + position + "位置的值");
@@ -48,16 +42,16 @@ public class FirstRecyclerViewActivity extends BaseActivity {
 
     @Override
     public boolean isNeedSystemBarTint() {
-        return true;
+        return false;
     }
 
     @Override
     public int getLayoutID() {
-        return R.layout.activity_first_recycler_view;
+        return R.layout.activity_second_recycler_view;
     }
 
     @Override
     public int getColorID() {
-        return getResources().getColor(R.color.colorAccent);
+        return 0;
     }
 }

@@ -46,7 +46,7 @@ public class MainActivity extends BaseActivity {
 
     @OnClick(R.id.second_re)
     void startSecondActicity() {
-        startAc(FirstRecyclerViewActivity.class);
+        startAc(SecondRecyclerViewActivity.class);
     }
 
     private void startAc(Class clazz) {
