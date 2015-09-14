@@ -15,7 +15,14 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:text="第一个RecyclerView" />
+            android:text="第一个RecyclerView入门" />
+
+        <Button
+            android:id="@+id/second_re"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="第二个RecyclerView" />
 
 
     </LinearLayout>

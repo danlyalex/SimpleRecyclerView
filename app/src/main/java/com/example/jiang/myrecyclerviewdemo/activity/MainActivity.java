@@ -1,20 +1,26 @@
 package com.example.jiang.myrecyclerviewdemo.activity;
 
 import android.content.Intent;
-import android.view.View;
 import android.widget.Button;
 
 import com.example.jiang.myrecyclerviewdemo.R;
 
+import butterknife.Bind;
+import butterknife.OnClick;
 
-public class MainActivity extends BaseActivity implements View.OnClickListener {
 
-    private Button mFirst;
+public class MainActivity extends BaseActivity {
+
+    @Bind(R.id.first_re)
+    Button mFirst;
+
+
+    @Bind(R.id.second_re)
+    Button mSecond;
 
     @Override
     protected void initViewWithEvents() {
-        mFirst = (Button) findViewById(R.id.first_re);
-        mFirst.setOnClickListener(this);
+
     }
 
     @Override
@@ -33,17 +39,20 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
     }
 
 
-    @Override
-    public void onClick(View view) {
-        switch (view.getId()) {
-            case R.id.first_re:
-                startAc();
-                break;
-        }
+    @OnClick(R.id.first_re)
+    void startFirstActicity() {
+        startAc(FirstRecyclerViewActivity.class);
     }
 
-    private void startAc() {
-        Intent intent = new Intent(this, FirstRecyclerViewActivity.class);
+    @OnClick(R.id.second_re)
+    void startSecondActicity() {
+        startAc(FirstRecyclerViewActivity.class);
+    }
+
+    private void startAc(Class clazz) {
+        Intent intent = new Intent(this, clazz);
         startActivity(intent);
     }
+
+
 }

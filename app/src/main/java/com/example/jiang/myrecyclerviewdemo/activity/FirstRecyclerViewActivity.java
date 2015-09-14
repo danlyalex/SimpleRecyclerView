@@ -13,10 +13,13 @@ import com.example.jiang.myrecyclerviewdemo.adapter.FirstRecAdapter;
 import java.util.ArrayList;
 import java.util.List;
 
+import butterknife.Bind;
+
 public class FirstRecyclerViewActivity extends BaseActivity {
 
 
-    private RecyclerView mRecycleView;
+    @Bind(R.id.first_recycle)
+    RecyclerView mRecycleView;
 
     @Override
     protected void initViewWithEvents() {
@@ -27,13 +30,12 @@ public class FirstRecyclerViewActivity extends BaseActivity {
     }
 
     private void initRecyclerView() {
-        mRecycleView = (RecyclerView) findViewById(R.id.first_recycle);
         RecyclerView.LayoutManager mManager = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
         mRecycleView.setLayoutManager(mManager);
         mRecycleView.addItemDecoration(new ItemDirection());
         mRecycleView.setItemAnimator(new DefaultItemAnimator());
         List<String> mValues = new ArrayList<>();
-        for (int i = 0; i < 20; i++) {
+        for (int i = 0; i < 40; i++) {
             mValues.add("第" + i + "条数据");
         }
         FirstRecAdapter mAdapter = new FirstRecAdapter(this, mValues);

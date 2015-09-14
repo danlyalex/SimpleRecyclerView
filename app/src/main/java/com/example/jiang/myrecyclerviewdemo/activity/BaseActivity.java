@@ -8,6 +8,8 @@ import android.view.WindowManager;
 
 import com.readystatesoftware.systembartint.SystemBarTintManager;
 
+import butterknife.ButterKnife;
+
 /**
  * Created by jiang on 15/9/14.
  */
@@ -29,14 +31,19 @@ public abstract class BaseActivity extends Activity {
 
     }
 
+    @Override
+    public void setContentView(int layoutResID) {
+        super.setContentView(layoutResID);
+        ButterKnife.bind(this);
+    }
 
-    protected abstract void initViewWithEvents();
+    protected abstract void initViewWithEvents(); //相当于 oncreate
 
-    public abstract boolean isNeedSystemBarTint();
+    public abstract boolean isNeedSystemBarTint(); //是否需要沉浸式状态栏
 
-    public abstract int getLayoutID();
+    public abstract int getLayoutID(); //根布局
 
-    public abstract int getColorID();
+    public abstract int getColorID();  //沉浸式状态栏 颜色
 
     /**
      * set status bar translucency
