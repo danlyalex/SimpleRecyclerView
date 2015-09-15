@@ -6,9 +6,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.TextView;
 
 import com.example.jiang.myrecyclerviewdemo.R;
+import com.example.jiang.myrecyclerviewdemo.model.StaggerModel;
+import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
@@ -17,12 +18,14 @@ import java.util.List;
  */
 public class StaggeredGridAdapter extends RecyclerView.Adapter<StaggeredGridViewHolder> {
 
-    private List<String> mDatas;
+    private List<StaggerModel> mDatas;
+    private List<Integer> mInteger;
     private Context mContext;
 
 
-    public StaggeredGridAdapter(Context mContext, List<String> mDatas) {
+    public StaggeredGridAdapter(Context mContext, List<StaggerModel> mDatas, List<Integer> mInteger) {
         this.mContext = mContext;
+        this.mInteger = mInteger;
         this.mDatas = mDatas;
     }
 
@@ -35,7 +38,8 @@ public class StaggeredGridAdapter extends RecyclerView.Adapter<StaggeredGridView
 
     @Override
     public void onBindViewHolder(StaggeredGridViewHolder holder, int position) {
-        holder.mTitle.setText(mDatas.get(position));
+        Picasso.with(mContext).load(mDatas.get(position).getImgUrl()).into(holder.mImg);
+
 
     }
 
@@ -48,11 +52,9 @@ public class StaggeredGridAdapter extends RecyclerView.Adapter<StaggeredGridView
 class StaggeredGridViewHolder extends RecyclerView.ViewHolder {
 
     ImageView mImg;
-    TextView mTitle;
 
     public StaggeredGridViewHolder(View itemView) {
         super(itemView);
         mImg = (ImageView) itemView.findViewById(R.id.StaggeredGrid_item_iv);
-        mTitle = (TextView) itemView.findViewById(R.id.StaggeredGrid_item_tv);
     }
 }
