@@ -8,6 +8,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.example.jiang.myrecyclerviewdemo.R;
+import com.example.jiang.myrecyclerviewdemo.face.OnItemClickListener;
 
 import java.util.List;
 
@@ -46,7 +47,7 @@ public class SecondRecyclerAdapter extends RecyclerView.Adapter<ViewHolder2> {
                 @Override
                 public void onClick(View view) {
                     int pos = holder.getAdapterPosition();
-                    mOnItemClickListener.onItemClick(holder.itemView, pos);
+                    mOnItemClickListener.OnItemClick(holder.itemView, pos);
                 }
             });
         }
@@ -58,10 +59,6 @@ public class SecondRecyclerAdapter extends RecyclerView.Adapter<ViewHolder2> {
         return mValues.size();
     }
 
-    public interface OnItemClickListener {
-        void onItemClick(View v, int position);
-
-    }
 }
 
 class ViewHolder2 extends RecyclerView.ViewHolder {

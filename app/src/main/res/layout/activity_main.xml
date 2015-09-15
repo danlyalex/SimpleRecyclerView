@@ -36,8 +36,13 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:text="可变的RecyclerView" />
-
+            android:text="可变的GridViewRecyclerView" />
+        <Button
+            android:id="@+id/five_re"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="带header的GridViewRecyclerView" />
 
     </LinearLayout>
 

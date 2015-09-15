@@ -6,6 +6,7 @@ import android.view.View;
 
 import com.example.jiang.myrecyclerviewdemo.R;
 import com.example.jiang.myrecyclerviewdemo.adapter.GridViewWithHeaderAdapter;
+import com.example.jiang.myrecyclerviewdemo.face.OnItemClickListener;
 import com.example.jiang.myrecyclerviewdemo.utils.SnackBarUtils;
 
 import java.util.ArrayList;
@@ -50,9 +51,9 @@ public class GridViewWithHeaderActivity extends BaseActivity {
 
 
         mAdapter = new GridViewWithHeaderAdapter(this, mDatas);
-        mAdapter.setmCallBack(new GridViewWithHeaderAdapter.ClickCallBack() {
+        mAdapter.setmCallBack(new OnItemClickListener() {
             @Override
-            public void Click(View v, int position) {
+            public void OnItemClick(View v, int position) {
 
                 SnackBarUtils.showShortSnackBar(v, "你点击了" + position);
             }

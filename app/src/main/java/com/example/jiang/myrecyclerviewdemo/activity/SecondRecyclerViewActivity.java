@@ -7,6 +7,7 @@ import android.view.View;
 
 import com.example.jiang.myrecyclerviewdemo.R;
 import com.example.jiang.myrecyclerviewdemo.adapter.SecondRecyclerAdapter;
+import com.example.jiang.myrecyclerviewdemo.face.OnItemClickListener;
 import com.example.jiang.myrecyclerviewdemo.utils.SnackBarUtils;
 
 import java.util.ArrayList;
@@ -27,12 +28,12 @@ public class SecondRecyclerViewActivity extends BaseActivity {
         mRecycleView.setItemAnimator(new DefaultItemAnimator());
         List<String> mValues = new ArrayList<>();
         for (int i = 0; i < 40; i++) {
-            mValues.add(i+"");
+            mValues.add(i + "");
         }
         SecondRecyclerAdapter mAdapter = new SecondRecyclerAdapter(this, mValues);
-        mAdapter.setmOnItemClickListener(new SecondRecyclerAdapter.OnItemClickListener() {
+        mAdapter.setmOnItemClickListener(new OnItemClickListener() {
             @Override
-            public void onItemClick(View v, int position) {
+            public void OnItemClick(View v, int position) {
                 SnackBarUtils.showShortSnackBar(v, "你点击了" + position + "位置的值");
             }
         });

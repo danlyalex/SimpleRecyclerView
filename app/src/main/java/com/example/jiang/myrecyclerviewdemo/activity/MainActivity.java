@@ -63,6 +63,11 @@ public class MainActivity extends BaseActivity {
         startAc(GridViewWithHeaderActivity.class);
     }
 
+    @OnClick(R.id.five_re)
+    void startFiveActivity() {
+        startAc(GridViewWithMultyStateActivity.class);
+    }
+
 
     private void startAc(Class clazz) {
         Intent intent = new Intent(this, clazz);

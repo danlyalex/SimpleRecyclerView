@@ -5,10 +5,11 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 
-import com.example.jiang.myrecyclerviewdemo.itemdirect.ItemDirection;
 import com.example.jiang.myrecyclerviewdemo.R;
-import com.example.jiang.myrecyclerviewdemo.utils.SnackBarUtils;
 import com.example.jiang.myrecyclerviewdemo.adapter.FirstRecAdapter;
+import com.example.jiang.myrecyclerviewdemo.face.OnItemClickListener;
+import com.example.jiang.myrecyclerviewdemo.itemdirect.ItemDirection;
+import com.example.jiang.myrecyclerviewdemo.utils.SnackBarUtils;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -36,9 +37,9 @@ public class FirstRecyclerViewActivity extends BaseActivity {
             mValues.add("第" + i + "条数据");
         }
         FirstRecAdapter mAdapter = new FirstRecAdapter(this, mValues);
-        mAdapter.setmOnItemClickListener(new FirstRecAdapter.OnItemClickListener() {
+        mAdapter.setmOnItemClickListener(new OnItemClickListener() {
             @Override
-            public void onItemClick(View v, int position) {
+            public void OnItemClick(View v, int position) {
                 SnackBarUtils.showShortSnackBar(v, "你点击了" + position + "位置的值");
             }
         });

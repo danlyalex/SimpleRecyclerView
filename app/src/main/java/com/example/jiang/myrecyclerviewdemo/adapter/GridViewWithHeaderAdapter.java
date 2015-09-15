@@ -8,6 +8,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.example.jiang.myrecyclerviewdemo.R;
+import com.example.jiang.myrecyclerviewdemo.face.OnItemClickListener;
 
 import java.util.List;
 
@@ -18,7 +19,7 @@ public class GridViewWithHeaderAdapter extends RecyclerView.Adapter<GridViewWith
 
     private List<String> mDatas;
     private Context mContext;
-    private ClickCallBack mCallBack;
+    private OnItemClickListener mCallBack;
 
 
     public GridViewWithHeaderAdapter(Context mContext, List<String> mDatas) {
@@ -26,11 +27,11 @@ public class GridViewWithHeaderAdapter extends RecyclerView.Adapter<GridViewWith
         this.mDatas = mDatas;
     }
 
-    public ClickCallBack getmCallBack() {
+    public OnItemClickListener getmCallBack() {
         return mCallBack;
     }
 
-    public void setmCallBack(ClickCallBack mCallBack) {
+    public void setmCallBack(OnItemClickListener mCallBack) {
         this.mCallBack = mCallBack;
     }
 
@@ -49,7 +50,7 @@ public class GridViewWithHeaderAdapter extends RecyclerView.Adapter<GridViewWith
             holder.mTitle.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    mCallBack.Click(holder.mTitle, position);
+                    mCallBack.OnItemClick(holder.mTitle, position);
                 }
             });
         }
@@ -62,10 +63,6 @@ public class GridViewWithHeaderAdapter extends RecyclerView.Adapter<GridViewWith
         return mDatas.size();
     }
 
-
-    public interface ClickCallBack {
-        void Click(View v, int position);
-    }
 
 }
 

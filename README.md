@@ -4,3 +4,4 @@
 ####3.添加 SnackBar工具类
 ####4.修改整体框架 
 ####5. 添加了ButterKnife 注入框架
+####6. 添加了GridView RecyclerView Header
