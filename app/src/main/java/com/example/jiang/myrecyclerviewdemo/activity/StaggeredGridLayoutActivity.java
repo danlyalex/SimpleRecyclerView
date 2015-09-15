@@ -47,13 +47,14 @@ public class StaggeredGridLayoutActivity extends BaseActivity {
 
         List<Integer> mInteger = new ArrayList<>();
         for (int j = 0; j < 40; j++) {
-            mInteger.add((int)(Math.random() * 100));
+            mInteger.add((int) (Math.random() * 100));
         }
 
 
         mAdapter = new StaggeredGridAdapter(this, mTitle, mInteger);
 
         mRecyclerView.setAdapter(mAdapter);
+        
     }
 
     @Override
@@ -68,6 +69,6 @@ public class StaggeredGridLayoutActivity extends BaseActivity {
 
     @Override
     public int getColorID() {
-        return 0;
+        return R.color.colorPrimary;
     }
 }

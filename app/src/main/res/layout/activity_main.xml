@@ -31,6 +31,13 @@
             android:layout_marginTop="10dp"
             android:text="瀑布流RecyclerView" />
 
+        <Button
+            android:id="@+id/four_re"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="可变的RecyclerView" />
+
 
     </LinearLayout>
 

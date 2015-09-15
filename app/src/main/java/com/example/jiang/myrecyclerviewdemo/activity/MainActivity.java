@@ -58,6 +58,12 @@ public class MainActivity extends BaseActivity {
     }
 
 
+    @OnClick(R.id.four_re)
+    void starFourActicity() {
+        startAc(GridViewWithHeaderActivity.class);
+    }
+
+
     private void startAc(Class clazz) {
         Intent intent = new Intent(this, clazz);
         startActivity(intent);
