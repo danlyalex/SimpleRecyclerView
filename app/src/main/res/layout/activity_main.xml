@@ -15,14 +15,21 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:text="第一个RecyclerView入门" />
+            android:text="RecyclerView入门" />
 
         <Button
             android:id="@+id/second_re"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:text="第二个RecyclerView" />
+            android:text="水平的RecyclerView" />
+
+        <Button
+            android:id="@+id/third_re"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="瀑布流RecyclerView" />
 
 
     </LinearLayout>

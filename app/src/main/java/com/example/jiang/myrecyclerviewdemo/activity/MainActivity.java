@@ -18,6 +18,9 @@ public class MainActivity extends BaseActivity {
     @Bind(R.id.second_re)
     Button mSecond;
 
+    @Bind(R.id.third_re)
+    Button mThird;
+
     @Override
     protected void initViewWithEvents() {
 
@@ -48,6 +51,12 @@ public class MainActivity extends BaseActivity {
     void startSecondActicity() {
         startAc(SecondRecyclerViewActivity.class);
     }
+
+    @OnClick(R.id.third_re)
+    void startThirdActicity() {
+        startAc(StaggeredGridLayoutActivity.class);
+    }
+
 
     private void startAc(Class clazz) {
         Intent intent = new Intent(this, clazz);

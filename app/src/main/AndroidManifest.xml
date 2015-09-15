@@ -24,6 +24,8 @@
         </activity>
         <activity android:name=".activity.SecondRecyclerViewActivity" >
         </activity>
+        <activity android:name=".activity.StaggeredGridLayoutActivity" >
+        </activity>
     </application>
 
 </manifest>
