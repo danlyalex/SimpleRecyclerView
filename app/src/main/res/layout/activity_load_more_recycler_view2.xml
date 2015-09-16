@@ -6,15 +6,24 @@
     android:fitsSystemWindows="true"
     android:orientation="vertical">
 
-
-    <com.example.jiang.myrecyclerviewdemo.widget.LoadMoreRecyclerView
-        android:id="@+id/seven_recycle"
+    <com.cjj.MaterialRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/seven_refresh"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="match_parent"
+        app:overlay="false"
+        app:progress_colors="@array/material_colors"
+        app:wave_color="@android:color/transparent"
+        app:wave_height_type="higher"
+        app:wave_show="true">
 
-    </com.example.jiang.myrecyclerviewdemo.widget.LoadMoreRecyclerView>
+        <com.example.jiang.myrecyclerviewdemo.widget.LoadMoreRecyclerView
+            android:id="@+id/seven_recycle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
 
-
+        </com.example.jiang.myrecyclerviewdemo.widget.LoadMoreRecyclerView>
+    </com.cjj.MaterialRefreshLayout>
 </LinearLayout>
 
 

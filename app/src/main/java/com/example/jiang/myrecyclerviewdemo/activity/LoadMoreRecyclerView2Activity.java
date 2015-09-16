@@ -5,8 +5,10 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 
+import com.cjj.MaterialRefreshLayout;
+import com.cjj.MaterialRefreshListener;
 import com.example.jiang.myrecyclerviewdemo.R;
-import com.example.jiang.myrecyclerviewdemo.adapter.FirstRecAdapter;
+import com.example.jiang.myrecyclerviewdemo.adapter.RefreshAdapter;
 import com.example.jiang.myrecyclerviewdemo.face.OnButtomListener;
 import com.example.jiang.myrecyclerviewdemo.face.OnItemClickListener;
 import com.example.jiang.myrecyclerviewdemo.utils.SnackBarUtils;
@@ -24,8 +26,10 @@ public class LoadMoreRecyclerView2Activity extends BaseActivity {
     private int count = 0;
     @Bind(R.id.seven_recycle)
     LoadMoreRecyclerView mRecycleView;
-    private FirstRecAdapter mAdapter;
+    private RefreshAdapter mAdapter;
 
+    @Bind(R.id.seven_refresh)
+    MaterialRefreshLayout mRefreshLayout;
 
     private Handler mHandler = new Handler() {
     };
@@ -53,11 +57,30 @@ public class LoadMoreRecyclerView2Activity extends BaseActivity {
         mRecycleView.setOnButtomListener(new OnButtomListener() {
             @Override
             public void onButtom() {
-                SnackBarUtils.showShortSnackBar(mRecycleView, "已经到底部，开始加载更多");
                 doLoadMore();
             }
         });
+        mRefreshLayout.setMaterialRefreshListener(new MaterialRefreshListener() {
+            @Override
+            public void onRefresh(MaterialRefreshLayout materialRefreshLayout) {
+                doRefresh();
+            }
+        });
 
+    }
+
+    private void doRefresh() {
+        SnackBarUtils.showShortSnackBar(mRecycleView, "开始刷新...");
+        mHandler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                count = 0;
+                mValues.clear();
+                fillData2List();
+                mRefreshLayout.finishRefresh();
+
+            }
+        }, 3000);
     }
 
     void doLoadMore() {
@@ -73,14 +96,12 @@ public class LoadMoreRecyclerView2Activity extends BaseActivity {
     }
 
     private void fillData2List() {
-
-
         for (int i = 0; i < 60; i++) {
             mValues.add("第" + count + "次，的第" + i + "条数据");
         }
         count++;
         if (mAdapter == null)
-            mAdapter = new FirstRecAdapter(this, mValues);
+            mAdapter = new RefreshAdapter(this, mValues);
         else
             mAdapter.notifyDataSetChanged();
         SnackBarUtils.showShortSnackBar(mRecycleView, "加载数据成功");
