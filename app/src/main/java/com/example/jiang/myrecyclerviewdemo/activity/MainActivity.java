@@ -76,6 +76,11 @@ public class MainActivity extends BaseActivity {
         startAc(RefreshLoadMoreActivity.class);
     }
 
+    @OnClick(R.id.seven_re)
+    void startSevenActivity() {
+        startAc(LoadMoreRecyclerView2Activity.class);
+    }
+
     private void startAc(Class clazz) {
         Intent intent = new Intent(this, clazz);
         startActivity(intent);

@@ -5,34 +5,26 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 
-import com.cjj.MaterialRefreshLayout;
-import com.cjj.MaterialRefreshListener;
 import com.example.jiang.myrecyclerviewdemo.R;
 import com.example.jiang.myrecyclerviewdemo.adapter.FirstRecAdapter;
+import com.example.jiang.myrecyclerviewdemo.face.OnButtomListener;
 import com.example.jiang.myrecyclerviewdemo.face.OnItemClickListener;
-import com.example.jiang.myrecyclerviewdemo.face.OnRecyclerViewScrollListener;
 import com.example.jiang.myrecyclerviewdemo.utils.SnackBarUtils;
+import com.example.jiang.myrecyclerviewdemo.widget.LoadMoreRecyclerView;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.Bind;
 
+public class LoadMoreRecyclerView2Activity extends BaseActivity {
 
-/**
- * 加载更多的时候有bug，已经在LoadMoreRecyclerView2Activity中解决
- */
-public class RefreshLoadMoreActivity extends BaseActivity {
 
     List<String> mValues = new ArrayList<>();
     private int count = 0;
-    @Bind(R.id.six_recycle)
-    RecyclerView mRecycleView;
+    @Bind(R.id.seven_recycle)
+    LoadMoreRecyclerView mRecycleView;
     private FirstRecAdapter mAdapter;
-
-
-    @Bind(R.id.six_refresh)
-    MaterialRefreshLayout mRefreshLayout;
 
 
     private Handler mHandler = new Handler() {
@@ -57,28 +49,12 @@ public class RefreshLoadMoreActivity extends BaseActivity {
             }
         });
         mRecycleView.setAdapter(mAdapter);
-        mRecycleView.setOnScrollListener(new OnRecyclerViewScrollListener() {
+
+        mRecycleView.setOnButtomListener(new OnButtomListener() {
             @Override
             public void onButtom() {
-                super.onButtom();
                 SnackBarUtils.showShortSnackBar(mRecycleView, "已经到底部，开始加载更多");
                 doLoadMore();
-            }
-        });
-        mRefreshLayout.setMaterialRefreshListener(new MaterialRefreshListener() {
-            @Override
-            public void onRefresh(final MaterialRefreshLayout materialRefreshLayout) {
-
-                mHandler.postDelayed(new Runnable() {
-                    @Override
-                    public void run() {
-                        SnackBarUtils.showShortSnackBar(mRecycleView, "开始下拉刷新");
-                        count = 0;
-                        mValues.clear();
-                        fillData2List();
-                        materialRefreshLayout.finishRefresh();
-                    }
-                }, 3000);
             }
         });
 
@@ -86,10 +62,12 @@ public class RefreshLoadMoreActivity extends BaseActivity {
 
     void doLoadMore() {
 
+        mRecycleView.setLoadmore_state(LoadMoreRecyclerView.STATE_START_LOADMORE);
         mHandler.postDelayed(new Runnable() {
             @Override
             public void run() {
                 fillData2List();
+                mRecycleView.setLoadmore_state(LoadMoreRecyclerView.STATE_FINISH_LOADMORE);
             }
         }, 3000);
     }
@@ -115,7 +93,7 @@ public class RefreshLoadMoreActivity extends BaseActivity {
 
     @Override
     public int getLayoutID() {
-        return R.layout.activity_refresh_load_more;
+        return R.layout.activity_load_more_recycler_view2;
     }
 
     @Override

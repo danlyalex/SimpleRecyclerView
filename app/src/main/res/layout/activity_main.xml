@@ -50,7 +50,14 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:text="带刷新和加载更多的GridViewRecyclerView" />
+            android:text="带刷新和加载更多的RecyclerView" />
+
+        <Button
+            android:id="@+id/seven_re"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="使用LoadMoreRecyclerView的RecyclerView" />
 
     </LinearLayout>
 
