@@ -8,3 +8,11 @@
 ####7. 添加了Log管理插件， 添加了一个下拉刷新的插件
 ####8. 完成了下拉刷新和加载更多的RecyclerView
 ####9. 优化了下拉刷新和加载更多的RecyclerView， 完成了LoadMoreRecyclerView
+####效果图：
+![cmd-markdown-logo](https://github.com/jiang111/MyRecyclerViewDemo/blob/master/capture/1.png)
+![cmd-markdown-logo](https://github.com/jiang111/MyRecyclerViewDemo/blob/master/capture/2.png)
+![cmd-markdown-logo](https://github.com/jiang111/MyRecyclerViewDemo/blob/master/capture/3.png)
+![cmd-markdown-logo](https://github.com/jiang111/MyRecyclerViewDemo/blob/master/capture/4.png)
+![cmd-markdown-logo](https://github.com/jiang111/MyRecyclerViewDemo/blob/master/capture/5.png)
+![cmd-markdown-logo](https://github.com/jiang111/MyRecyclerViewDemo/blob/master/capture/6.png)
+![cmd-markdown-logo](https://github.com/jiang111/MyRecyclerViewDemo/blob/master/capture/7.png)
