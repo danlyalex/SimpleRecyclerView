@@ -24,6 +24,7 @@ public class MainActivity extends BaseActivity {
     @Override
     protected void initViewWithEvents() {
 
+
     }
 
     @Override
@@ -68,6 +69,12 @@ public class MainActivity extends BaseActivity {
         startAc(GridViewWithMultyStateActivity.class);
     }
 
+
+    @OnClick(R.id.six_re)
+    void startSixActivity() {
+
+        startAc(RefreshLoadMoreActivity.class);
+    }
 
     private void startAc(Class clazz) {
         Intent intent = new Intent(this, clazz);

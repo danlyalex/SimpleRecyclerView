@@ -29,6 +29,8 @@
         </activity>
         <activity android:name=".activity.GridViewWithMultyStateActivity" >
         </activity>
+        <activity android:name=".activity.RefreshLoadMoreActivity" >
+        </activity>
     </application>
 
 </manifest>
