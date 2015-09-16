@@ -19,6 +19,10 @@ import java.util.List;
 
 import butterknife.Bind;
 
+
+/**
+ * 刷新和加载更多
+ */
 public class LoadMoreRecyclerView2Activity extends BaseActivity {
 
 
