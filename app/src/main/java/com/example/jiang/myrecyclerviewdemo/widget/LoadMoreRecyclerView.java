@@ -14,35 +14,26 @@ import com.example.jiang.myrecyclerviewdemo.face.OnButtomListener;
  */
 public class LoadMoreRecyclerView extends RecyclerView {
 
-
+    /**
+     * 监听到底部的接口
+     */
     private OnButtomListener onButtomListener;
 
+    /**
+     * 正在加载更多
+     */
     public static final int STATE_START_LOADMORE = 100;
+
+    /**
+     * 加载完成
+     */
     public static final int STATE_FINISH_LOADMORE = 90;
 
-    public int getLoadmore_state() {
-        return loadmore_state;
-    }
-
-    public void setLoadmore_state(int loadmore_state) {
-        this.loadmore_state = loadmore_state;
-    }
-
+    /**
+     * 加载更多时候的状态
+     */
     private int loadmore_state;
 
-    public OnButtomListener getOnButtomListener() {
-        return onButtomListener;
-    }
-
-    public void setOnButtomListener(OnButtomListener onButtomListener) {
-        this.onButtomListener = onButtomListener;
-    }
-
-    public static enum LAYOUT_MANAGER_TYPE {
-        LINEAR,
-        GRID,
-        STAGGERED_GRID
-    }
 
     /**
      * layoutManager的类型（枚举）
@@ -58,18 +49,18 @@ public class LoadMoreRecyclerView extends RecyclerView {
      * 最后一个可见的item的位置
      */
     private int lastVisibleItemPosition;
-/*    *//**
-     * 是否正在加载
-     *//*
-    private boolean isLoadingMore = false;*/
+
 
     /**
      * 当前滑动的状态
      */
     private int currentScrollState = 0;
 
-
-    //****************************
+    public static enum LAYOUT_MANAGER_TYPE {
+        LINEAR,
+        GRID,
+        STAGGERED_GRID
+    }
 
 
     public LoadMoreRecyclerView(Context context) {
@@ -95,7 +86,7 @@ public class LoadMoreRecyclerView extends RecyclerView {
     @Override
     public void onScrolled(int dx, int dy) {
         super.onScrolled(dx, dy);
-        RecyclerView.LayoutManager layoutManager = getLayoutManager();
+        RecyclerView.LayoutManager layoutManager = getLayoutManager(); //拿到layoutmanager用来判断类型，拿到最后一个可见的view
         if (layoutManagerType == null) {
             if (layoutManager instanceof LinearLayoutManager) {
                 layoutManagerType = LAYOUT_MANAGER_TYPE.LINEAR;
@@ -108,6 +99,9 @@ public class LoadMoreRecyclerView extends RecyclerView {
                         "不支持的LayoutManager ,目前只支持 LinearLayoutManager, GridLayoutManager and StaggeredGridLayoutManager");
             }
         }
+        /**
+         * 拿到最后一个可见的view
+         */
         switch (layoutManagerType) {
             case LINEAR:
                 lastVisibleItemPosition = ((LinearLayoutManager) layoutManager).findLastVisibleItemPosition();
@@ -129,7 +123,7 @@ public class LoadMoreRecyclerView extends RecyclerView {
     @Override
     public void onScrollStateChanged(int state) {
         super.onScrollStateChanged(state);
-        if (loadmore_state == STATE_START_LOADMORE)
+        if (loadmore_state == STATE_START_LOADMORE)  //如果正在加载更多， 则直接return
             return;
         currentScrollState = state;
         RecyclerView.LayoutManager layoutManager = getLayoutManager();
@@ -149,4 +143,22 @@ public class LoadMoreRecyclerView extends RecyclerView {
         }
         return max;
     }
+
+    public OnButtomListener getOnButtomListener() {
+        return onButtomListener;
+    }
+
+    public void setOnButtomListener(OnButtomListener onButtomListener) {
+        this.onButtomListener = onButtomListener;
+    }
+
+
+    public int getLoadmore_state() {
+        return loadmore_state;
+    }
+
+    public void setLoadmore_state(int loadmore_state) {
+        this.loadmore_state = loadmore_state;
+    }
+
 }

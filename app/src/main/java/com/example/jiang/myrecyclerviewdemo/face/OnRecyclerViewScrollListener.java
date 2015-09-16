@@ -10,31 +10,13 @@ import android.support.v7.widget.StaggeredGridLayoutManager;
  * Created by jiang on 15/9/16.
  */
 public class OnRecyclerViewScrollListener extends RecyclerView.OnScrollListener implements OnButtomListener {
-    @Override
-    public void onButtom() {
 
-    }
-
-    private String TAG = getClass().getSimpleName();
-
-    public int getLoadmore_state() {
-        return loadmore_state;
-    }
-
-    public void setLoadmore_state(int loadmore_state) {
-        this.loadmore_state = loadmore_state;
-    }
-
-    private int loadmore_state;
-
-    public static enum LAYOUT_MANAGER_TYPE {
-        LINEAR,
-        GRID,
-        STAGGERED_GRID
-    }
 
     public static final int STATE_START_LOADMORE = 100;
     public static final int STATE_FINISH_LOADMORE = 90;
+
+    private int loadmore_state;
+
 
     /**
      * layoutManager的类型（枚举）
@@ -50,15 +32,17 @@ public class OnRecyclerViewScrollListener extends RecyclerView.OnScrollListener 
      * 最后一个可见的item的位置
      */
     private int lastVisibleItemPosition;
-/*    *//**
-     * 是否正在加载
-     *//*
-    private boolean isLoadingMore = false;*/
 
     /**
      * 当前滑动的状态
      */
     private int currentScrollState = 0;
+
+    public static enum LAYOUT_MANAGER_TYPE {
+        LINEAR,
+        GRID,
+        STAGGERED_GRID
+    }
 
 
     @Override
@@ -119,4 +103,18 @@ public class OnRecyclerViewScrollListener extends RecyclerView.OnScrollListener 
         }
         return max;
     }
+
+    @Override
+    public void onButtom() {
+
+    }
+
+    public int getLoadmore_state() {
+        return loadmore_state;
+    }
+
+    public void setLoadmore_state(int loadmore_state) {
+        this.loadmore_state = loadmore_state;
+    }
+
 }
