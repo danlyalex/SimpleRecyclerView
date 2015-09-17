@@ -59,6 +59,18 @@
             android:layout_marginTop="10dp"
             android:text="使用LoadMoreRecyclerView的RecyclerView" />
 
+        <Button
+            android:id="@+id/eight_re"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="可拖动的RecyclerView的RecyclerView" />
+        <Button
+            android:id="@+id/night_re"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="可拖动的GridView的RecyclerView" />
     </LinearLayout>
 
 </ScrollView>

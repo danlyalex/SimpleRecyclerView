@@ -33,6 +33,10 @@
         </activity>
         <activity android:name=".activity.LoadMoreRecyclerView2Activity" >
         </activity>
+        <activity android:name=".activity.DraggerRecyclerViewActivity" >
+        </activity>
+        <activity android:name=".activity.DraggerGridViewActivity" >
+        </activity>
     </application>
 
 </manifest>

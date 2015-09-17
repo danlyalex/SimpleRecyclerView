@@ -81,6 +81,16 @@ public class MainActivity extends BaseActivity {
         startAc(LoadMoreRecyclerView2Activity.class);
     }
 
+    @OnClick(R.id.eight_re)
+    void starteightActivity() {
+        startAc(DraggerRecyclerViewActivity.class);
+    }
+
+    @OnClick(R.id.night_re)
+    void startnightActivity() {
+        startAc(DraggerGridViewActivity.class);
+    }
+
     private void startAc(Class clazz) {
         Intent intent = new Intent(this, clazz);
         startActivity(intent);
