@@ -1,7 +1,11 @@
 package com.example.jiang.myrecyclerviewdemo.utils;
 
+import android.graphics.Color;
 import android.support.design.widget.Snackbar;
 import android.view.View;
+import android.widget.TextView;
+
+import com.example.jiang.myrecyclerviewdemo.R;
 
 /**
  * Created by jiang on 15/9/14.
@@ -10,13 +14,22 @@ public class SnackBarUtils {
 
 
     public static void showShortSnackBar(View v, String mText) {
-        Snackbar.make(v, mText, Snackbar.LENGTH_SHORT).show();
+        Snackbar snackBar = Snackbar.make(v, mText, Snackbar.LENGTH_SHORT);
+        setSnackBarMessageTextColor(snackBar);
+        snackBar.show();
 
     }
 
 
+    public static void setSnackBarMessageTextColor(Snackbar bar) {
+        ((TextView) bar.getView().findViewById(R.id.snackbar_text)).setTextColor(Color.WHITE);
+    }
+
+
     public static void showCustomColorLongSnackBar(View v, String mText) {
-        Snackbar.make(v, mText, Snackbar.LENGTH_LONG).show();
+        Snackbar bar = Snackbar.make(v, mText, Snackbar.LENGTH_LONG);
+        setSnackBarMessageTextColor(bar);
+        bar.show();
     }
 
 
