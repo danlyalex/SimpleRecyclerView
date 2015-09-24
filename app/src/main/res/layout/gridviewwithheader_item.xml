@@ -14,11 +14,11 @@
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
         android:layout_marginTop="5dp"
-        android:background="@color/colorPrimary"
+        android:background="@color/item_bg_color"
         android:gravity="center"
         android:src="@mipmap/ic_launcher"
         android:text="sad"
-        android:textColor="@android:color/white" />
+        android:textColor="@color/item_tv_color" />
 
 
 </LinearLayout>

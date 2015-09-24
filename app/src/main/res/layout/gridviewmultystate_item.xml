@@ -12,13 +12,13 @@
         android:layout_gravity="center"
         android:layout_marginBottom="5dp"
         android:layout_marginLeft="10dp"
+        android:background="@color/item_bg_color"
         android:layout_marginRight="10dp"
         android:layout_marginTop="5dp"
-        android:background="@color/colorPrimary"
         android:gravity="center"
         android:src="@mipmap/ic_launcher"
         android:text="sad"
-        android:textColor="@android:color/white" />
+        android:textColor="@color/item_tv_color" />
 
 
 </LinearLayout>

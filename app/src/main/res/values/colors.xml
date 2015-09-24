@@ -3,4 +3,9 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
+
+    <color name="bg_color">#EEEEEE</color>
+    <color name="item_bg_color">#F8F8F8</color>
+    <color name="item_tv_color">@android:color/darker_gray</color>
+
 </resources>

@@ -19,6 +19,7 @@
 
         <com.example.jiang.myrecyclerviewdemo.widget.LoadMoreRecyclerView
             android:id="@+id/seven_recycle"
+            android:background="@color/bg_color"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 

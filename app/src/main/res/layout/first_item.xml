@@ -8,9 +8,10 @@
         android:id="@+id/first_item_tv"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="@color/item_bg_color"
         android:gravity="center"
         android:text="23"
-        android:textColor="@color/colorAccent"
+        android:textColor="@color/item_tv_color"
         android:textSize="20sp" />
 
 </LinearLayout>

@@ -8,6 +8,7 @@
 
     <android.support.v7.widget.RecyclerView
         android:layout_width="match_parent"
+        android:background="@color/bg_color"
         android:id="@+id/first_recycle"
         android:layout_height="wrap_content">
 
