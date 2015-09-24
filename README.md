@@ -9,6 +9,7 @@
 ####8. 完成了下拉刷新和加载更多的RecyclerView
 ####9. 优化了下拉刷新和加载更多的RecyclerView， 完成了LoadMoreRecyclerView
 ####10. 新增可拖动的RecyclerView和GridView
+####11. 新增通过ItemTouchHelper实现的RecyclerView
 ####效果图：
 ![cmd-markdown-logo](https://github.com/jiang111/MyRecyclerViewDemo/blob/master/capture/1.png)
 ![cmd-markdown-logo](https://github.com/jiang111/MyRecyclerViewDemo/blob/master/capture/2.png)
