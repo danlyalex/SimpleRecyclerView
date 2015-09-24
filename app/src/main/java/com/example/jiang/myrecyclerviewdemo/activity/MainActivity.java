@@ -91,6 +91,11 @@ public class MainActivity extends BaseActivity {
         startAc(DraggerGridViewActivity.class);
     }
 
+    @OnClick(R.id.ten_re)
+    void starttenActivity() {
+        startAc(SimpleSwipeRecyclerViewActivity.class);
+    }
+
     private void startAc(Class clazz) {
         Intent intent = new Intent(this, clazz);
         startActivity(intent);
