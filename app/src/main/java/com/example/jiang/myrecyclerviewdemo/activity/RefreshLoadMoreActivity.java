@@ -102,7 +102,7 @@ public class RefreshLoadMoreActivity extends BaseActivity {
         }
         count++;
         if (mAdapter == null)
-            mAdapter = new FirstRecAdapter(this, mValues);
+            mAdapter = new FirstRecAdapter(mValues, this);
         else
             mAdapter.notifyDataSetChanged();
         SnackBarUtils.showShortSnackBar(mRecycleView, "加载数据成功");

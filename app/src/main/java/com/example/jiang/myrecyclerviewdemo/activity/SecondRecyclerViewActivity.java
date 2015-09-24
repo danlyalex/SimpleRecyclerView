@@ -30,7 +30,7 @@ public class SecondRecyclerViewActivity extends BaseActivity {
         for (int i = 0; i < 40; i++) {
             mValues.add(i + "");
         }
-        SecondRecyclerAdapter mAdapter = new SecondRecyclerAdapter(this, mValues);
+        SecondRecyclerAdapter mAdapter = new SecondRecyclerAdapter(mValues, this);
         mAdapter.setmOnItemClickListener(new OnItemClickListener() {
             @Override
             public void OnItemClick(View v, int position) {

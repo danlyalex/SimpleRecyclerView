@@ -45,16 +45,11 @@ public class StaggeredGridLayoutActivity extends BaseActivity {
             mTitle.add(model);
         }
 
-        List<Integer> mInteger = new ArrayList<>();
-        for (int j = 0; j < 40; j++) {
-            mInteger.add((int) (Math.random() * 100));
-        }
 
-
-        mAdapter = new StaggeredGridAdapter(this, mTitle, mInteger);
+        mAdapter = new StaggeredGridAdapter(mTitle, this);
 
         mRecyclerView.setAdapter(mAdapter);
-        
+
     }
 
     @Override

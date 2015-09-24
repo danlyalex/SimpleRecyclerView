@@ -105,7 +105,7 @@ public class LoadMoreRecyclerView2Activity extends BaseActivity {
         }
         count++;
         if (mAdapter == null)
-            mAdapter = new RefreshAdapter(this, mValues);
+            mAdapter = new RefreshAdapter(mValues, this);
         else
             mAdapter.notifyDataSetChanged();
         SnackBarUtils.showShortSnackBar(mRecycleView, "加载数据成功");

@@ -1,7 +1,6 @@
 package com.example.jiang.myrecyclerviewdemo.adapter;
 
 import android.content.Context;
-import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,23 +14,23 @@ import java.util.List;
 /**
  * Created by jiang on 15/9/14.
  */
-public class SecondRecyclerAdapter extends RecyclerView.Adapter<ViewHolder2> {
+public class SecondRecyclerAdapter extends BaseAdapter<String, ViewHolder2> {
 
-    private Context mContext;
 
-    private List<String> mValues;
 
     private OnItemClickListener mOnItemClickListener;
 
+    public SecondRecyclerAdapter(List<String> mDatas, Context mContext) {
+        super(mDatas, mContext);
+    }
+
+    public SecondRecyclerAdapter() {
+    }
 
     public void setmOnItemClickListener(OnItemClickListener mOnItemClickListener) {
         this.mOnItemClickListener = mOnItemClickListener;
     }
 
-    public SecondRecyclerAdapter(Context mContext, List<String> mValues) {
-        this.mContext = mContext;
-        this.mValues = mValues;
-    }
 
     @Override
     public ViewHolder2 onCreateViewHolder(ViewGroup parent, int viewType) {
@@ -41,7 +40,7 @@ public class SecondRecyclerAdapter extends RecyclerView.Adapter<ViewHolder2> {
 
     @Override
     public void onBindViewHolder(final ViewHolder2 holder, int position) {
-        holder.mTitle.setText(mValues.get(position));
+        holder.mTitle.setText(mDatas.get(position));
         if (mOnItemClickListener != null) {
             holder.itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -54,14 +53,9 @@ public class SecondRecyclerAdapter extends RecyclerView.Adapter<ViewHolder2> {
 
     }
 
-    @Override
-    public int getItemCount() {
-        return mValues.size();
-    }
-
 }
 
-class ViewHolder2 extends RecyclerView.ViewHolder {
+class ViewHolder2 extends BaseViewHolder {
 
     TextView mTitle;
 

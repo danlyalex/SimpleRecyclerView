@@ -1,7 +1,6 @@
 package com.example.jiang.myrecyclerviewdemo.adapter;
 
 import android.content.Context;
-import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,9 +14,8 @@ import java.util.List;
 /**
  * Created by jiang on 15/9/15.
  */
-public class GridViewWithMultyStateAdapter extends RecyclerView.Adapter<GridViewWithMultyStateViewHolder> {
-    private List<String> mDatas;
-    private Context mContext;
+public class GridViewWithMultyStateAdapter extends BaseAdapter<String, GridViewWithMultyStateViewHolder> {
+
     private static final int ITEM_VIEW_TYPE_HEADER = 0;
     private static final int ITEM_VIEW_TYPE_ITEM = 1;
 
@@ -31,9 +29,11 @@ public class GridViewWithMultyStateAdapter extends RecyclerView.Adapter<GridView
 
     private OnItemClickListener mListener;
 
-    public GridViewWithMultyStateAdapter(Context mContext, List<String> mDatas) {
-        this.mContext = mContext;
-        this.mDatas = mDatas;
+    public GridViewWithMultyStateAdapter(List<String> mDatas, Context mContext) {
+        super(mDatas, mContext);
+    }
+
+    public GridViewWithMultyStateAdapter() {
     }
 
     @Override
@@ -62,10 +62,6 @@ public class GridViewWithMultyStateAdapter extends RecyclerView.Adapter<GridView
         }
     }
 
-    @Override
-    public int getItemCount() {
-        return mDatas.size() + 1;
-    }
 
     @Override
     public int getItemViewType(int position) {
@@ -79,7 +75,7 @@ public class GridViewWithMultyStateAdapter extends RecyclerView.Adapter<GridView
 
 }
 
-class GridViewWithMultyStateViewHolder extends RecyclerView.ViewHolder {
+class GridViewWithMultyStateViewHolder extends BaseViewHolder {
 
     TextView mImg;
 

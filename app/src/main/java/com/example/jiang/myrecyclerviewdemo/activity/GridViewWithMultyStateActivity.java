@@ -36,7 +36,7 @@ public class GridViewWithMultyStateActivity extends BaseActivity {
         for (int i = 0; i < 40; i++) {
             mValues.add(i + "");
         }
-        mAdapter = new GridViewWithMultyStateAdapter(this, mValues);
+        mAdapter = new GridViewWithMultyStateAdapter(mValues, this);
 
         mRecyclerView.setAdapter(mAdapter);
         mManager.setSpanSizeLookup(new GridLayoutManager.SpanSizeLookup() {

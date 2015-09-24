@@ -1,7 +1,6 @@
 package com.example.jiang.myrecyclerviewdemo.adapter;
 
 import android.content.Context;
-import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,16 +14,12 @@ import java.util.List;
 /**
  * Created by jiang on 15/9/15.
  */
-public class GridViewWithHeaderAdapter extends RecyclerView.Adapter<GridViewWithHeaderViewHolder> {
+public class GridViewWithHeaderAdapter extends BaseAdapter<String, GridViewWithHeaderViewHolder> {
 
-    private List<String> mDatas;
-    private Context mContext;
     private OnItemClickListener mCallBack;
 
-
     public GridViewWithHeaderAdapter(Context mContext, List<String> mDatas) {
-        this.mContext = mContext;
-        this.mDatas = mDatas;
+        super(mDatas, mContext);
     }
 
     public OnItemClickListener getmCallBack() {
@@ -58,15 +53,10 @@ public class GridViewWithHeaderAdapter extends RecyclerView.Adapter<GridViewWith
 
     }
 
-    @Override
-    public int getItemCount() {
-        return mDatas.size();
-    }
-
 
 }
 
-class GridViewWithHeaderViewHolder extends RecyclerView.ViewHolder {
+class GridViewWithHeaderViewHolder extends BaseViewHolder {
 
     TextView mTitle;
 

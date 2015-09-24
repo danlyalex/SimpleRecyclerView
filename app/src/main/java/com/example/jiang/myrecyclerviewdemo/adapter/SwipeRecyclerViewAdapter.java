@@ -1,7 +1,6 @@
 package com.example.jiang.myrecyclerviewdemo.adapter;
 
 import android.content.Context;
-import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,15 +13,11 @@ import java.util.List;
 /**
  * Created by jiang on 15/9/24.
  */
-public class SwipeRecyclerViewAdapter extends RecyclerView.Adapter<SwipeViewHolder> {
+public class SwipeRecyclerViewAdapter extends BaseAdapter<String, SwipeViewHolder> {
 
     public SwipeRecyclerViewAdapter(List<String> mDatas, Context mContext) {
-        this.mDatas = mDatas;
-        this.mContext = mContext;
+        super(mDatas, mContext);
     }
-
-    private List<String> mDatas;
-    private Context mContext;
 
     @Override
     public SwipeViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
@@ -31,10 +26,6 @@ public class SwipeRecyclerViewAdapter extends RecyclerView.Adapter<SwipeViewHold
         return new SwipeViewHolder(v);
     }
 
-    @Override
-    public int getItemCount() {
-        return mDatas.size();
-    }
 
     @Override
     public void onBindViewHolder(SwipeViewHolder holder, int position) {
@@ -47,7 +38,7 @@ public class SwipeRecyclerViewAdapter extends RecyclerView.Adapter<SwipeViewHold
 
 }
 
-class SwipeViewHolder extends RecyclerView.ViewHolder {
+class SwipeViewHolder extends BaseViewHolder {
 
     TextView mTitle;
 

@@ -1,7 +1,6 @@
 package com.example.jiang.myrecyclerviewdemo.adapter;
 
 import android.content.Context;
-import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,17 +15,13 @@ import java.util.List;
 /**
  * Created by jiang on 15/9/15.
  */
-public class StaggeredGridAdapter extends RecyclerView.Adapter<StaggeredGridViewHolder> {
+public class StaggeredGridAdapter extends BaseAdapter<StaggerModel, StaggeredGridViewHolder> {
 
-    private List<StaggerModel> mDatas;
-    private List<Integer> mInteger;
-    private Context mContext;
+    public StaggeredGridAdapter(List<StaggerModel> mDatas, Context mContext) {
+        super(mDatas, mContext);
+    }
 
-
-    public StaggeredGridAdapter(Context mContext, List<StaggerModel> mDatas, List<Integer> mInteger) {
-        this.mContext = mContext;
-        this.mInteger = mInteger;
-        this.mDatas = mDatas;
+    public StaggeredGridAdapter() {
     }
 
     @Override
@@ -42,14 +37,9 @@ public class StaggeredGridAdapter extends RecyclerView.Adapter<StaggeredGridView
 
 
     }
-
-    @Override
-    public int getItemCount() {
-        return mDatas.size();
-    }
 }
 
-class StaggeredGridViewHolder extends RecyclerView.ViewHolder {
+class StaggeredGridViewHolder extends BaseViewHolder {
 
     ImageView mImg;
 

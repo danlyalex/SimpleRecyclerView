@@ -36,7 +36,7 @@ public class FirstRecyclerViewActivity extends BaseActivity {
         for (int i = 0; i < 40; i++) {
             mValues.add("第" + i + "条数据");
         }
-        FirstRecAdapter mAdapter = new FirstRecAdapter(this, mValues);
+        FirstRecAdapter mAdapter = new FirstRecAdapter(mValues, this);
         mAdapter.setmOnItemClickListener(new OnItemClickListener() {
             @Override
             public void OnItemClick(View v, int position) {
