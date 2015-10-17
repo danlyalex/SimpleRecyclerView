@@ -11,6 +11,7 @@
 ####10. 新增可拖动的RecyclerView和GridView
 ####11. 新增通过ItemTouchHelper实现的RecyclerView
 ####效果图：
+##还是别看了。 漂亮的效果，请移步： [漂亮的效果](https://github.com/jiang111/NormalRecyclerView)
 ![cmd-markdown-logo](https://github.com/jiang111/MyRecyclerViewDemo/blob/master/capture/1.png)
 ![cmd-markdown-logo](https://github.com/jiang111/MyRecyclerViewDemo/blob/master/capture/2.png)
 ![cmd-markdown-logo](https://github.com/jiang111/MyRecyclerViewDemo/blob/master/capture/3.png)
